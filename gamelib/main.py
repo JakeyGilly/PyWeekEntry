@@ -15,19 +15,13 @@ def main():
     screen = pygame.display.set_mode(size)
     pygame.display.set_caption("Chase")
     #Detecting for Quit and Key Press events
-    playerX_change = 0
+    player.playerX_change = 0
     while 1:
         for event in pygame.event.get():
             if event.type == pygame.QUIT: sys.exit()
-            if event.type == pygame.KEYDOWN: #player.updatePlayer(event.key)
-                if event.key == pygame.K_a:
-                    playerX_change = -0.1
-                elif event.key == pygame.K_d:
-                    playerX_change = 0.1
-            if event.type == pygame.KEYUP:
-                if event.key == pygame.K_a or event.key == pygame.K_d:
-                    playerX_change = 0
-        player.x += playerX_change
+            if event.type == pygame.KEYDOWN: player.updatePlayerDown(event.key)
+            if event.type == pygame.KEYUP: player.updatePlayerUp(event.key)
+        player.x += player.playerX_change
         # Clear the screen
         screen.fill((255, 255, 255))
         # Draw the things on the screen

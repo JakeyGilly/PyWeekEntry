@@ -6,8 +6,12 @@ x = 0
 y = 0
 
 
-def updatePlayer(key):
+def updatePlayerDown(key):
     if key == pygame.K_a:
-        player.x = player.x - 7
+        player.playerX_change = -0.1
     elif key == pygame.K_d:
-        player.x = player.x + 7
+        player.playerX_change = 0.1
+
+def updatePlayerUp(key):
+    if key == pygame.K_a or key == pygame.K_d:
+        player.playerX_change = 0
