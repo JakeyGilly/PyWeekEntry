@@ -1,34 +1,36 @@
+from gamelib import roads
+from gamelib import player
 import pygame, sys
 
+screenheight = 480
+screenwidth = 854
+
+
 def main():
-    pygame.init()
-    global screenheight
-    global screenwidth
-    size = screenwidth, screenheight = 854, 480
-    carHeight = (screenheight / 2) - 25
+    # Set player starting X, Y
+    angle = 0
+    player.x = (screenwidth / 2) - 25
+    player.y = (screenheight / 2) - 25
+    # Setting up the screen
+    size = screenwidth, screenheight
     screen = pygame.display.set_mode(size)
-    pygame.display.set_caption("raylib on c++ is better")
-    red = 255, 0, 0
-    car = pygame.draw.rect(screen, red, ((screenwidth / 2) - 25, carHeight, 50, 50))
-    car0 = car.copy()
-    drawstartroad(screen)
+    pygame.display.set_caption("Chase")
+    #Detecting for Quit and Key Press events
+    player.playerangle = 0
     while 1:
         for event in pygame.event.get():
             if event.type == pygame.QUIT: sys.exit()
-            pygame.display.update()
-        car0.y -= 10
-        pygame.draw.rect(screen, red, car0, 1)
+            if event.type == pygame.KEYDOWN: player.updatePlayerDown(event.key)
+            if event.type == pygame.KEYUP: player.updatePlayerUp(event.key)
+        angle += player.playerangle
+        # Clear the screen
+        screen.fill((255, 255, 255))
+        # Draw the things on the screen
+        roads.drawstartroad(screen)
+        #pygame.draw.rect(screen, (0, 0, 255), (player.x, player.y, 50, 50))
+        player.rectRotate(screen, (255, 0, 0), (player.x, player.y, 50, 70), angle)
+        pygame.display.flip()
+        # Update the screen
         pygame.display.update()
 
-class Road():
-    def __init__(self,length):
-        self.length = length
-        
 
-def drawroad(screen, length, width, direction):
-    pass
-def drawstartroad(screen):
-    length = 200
-    width = 10
-    pygame.draw.line(screen, (0, 255, 0), ((screenwidth/4)*3, screenheight) , ((screenwidth/4)*3, 0), width)
-    pygame.draw.line(screen, (0, 255, 0), (screenwidth/4, screenheight) , (screenwidth/4, 0), width)
