@@ -25,4 +25,4 @@ def rectRotate(surface, color, pos, rotation_angle):
     incfromrotw = (s.get_width()-pos[2]*2)//2
     incfromroth = (s.get_height()-pos[3]*2)//2
     surface.blit(s, (pos[0]-pos[2]+pos[2]//2-incfromrotw,pos[1]-pos[3]+pos[3]//2-incfromroth))
-        
+
