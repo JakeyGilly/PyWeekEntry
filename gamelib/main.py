@@ -6,7 +6,6 @@ import pygame, sys
 screenheight = 480
 screenwidth = 854
 
-
 def main():
     pygame.init()
     # Set player starting X, Y
