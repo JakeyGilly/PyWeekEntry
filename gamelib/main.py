@@ -24,6 +24,8 @@ def main():
             if event.type == pygame.QUIT: sys.exit()
             if event.type == pygame.KEYDOWN: player.updatePlayerDown(event.key)
             if event.type == pygame.KEYUP: player.updatePlayerUp(event.key)
+        
+        player.updateVelocity(player.pushed_forward,player.pushed_backward)
         #Rotate if needed
         angle += player.playerangle
         # Clear the screen
