@@ -22,14 +22,13 @@ def main():
             if event.type == pygame.QUIT: sys.exit()
             if event.type == pygame.KEYDOWN: player.updatePlayerDown(event.key)
             if event.type == pygame.KEYUP: player.updatePlayerUp(event.key)
+        #Rotate if needed
         angle += player.playerangle
         # Clear the screen
         screen.fill((255, 255, 255))
         # Draw the things on the screen
         roads.drawstartroad(screen)
-        #pygame.draw.rect(screen, (0, 0, 255), (player.x, player.y, 50, 50))
         player.rectRotate(screen, (255, 0, 0), (player.x, player.y, 50, 70), angle)
-        pygame.display.flip()
         # Update the screen
         pygame.display.update()
 
