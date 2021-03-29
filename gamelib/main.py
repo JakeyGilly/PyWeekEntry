@@ -1,5 +1,6 @@
 from gamelib import roads
 from gamelib import player
+from gamelib import time
 import pygame, sys
 
 screenheight = 480
@@ -7,6 +8,7 @@ screenwidth = 854
 
 
 def main():
+    pygame.init()
     # Set player starting X, Y
     angle = 0
     player.x = (screenwidth / 2) - 25
