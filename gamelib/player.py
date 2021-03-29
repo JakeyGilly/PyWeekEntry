@@ -54,4 +54,3 @@ def updateVelocity(move,unmove):
         player.velocity = 0
     print(player.velocity)
     #print(player.y)
-

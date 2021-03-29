@@ -35,5 +35,3 @@ def main():
         player.rectRotate(screen, (255, 0, 0), (player.x, player.y, 50, 70), angle)
         # Update the screen
         pygame.display.update()
-
-
