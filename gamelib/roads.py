@@ -2,8 +2,8 @@ from gamelib import main
 import pygame
 
 
-def drawstartroad(screen): 
-    pygame.draw.rect(screen, (86,86,86),((main.screenwidth//2)//2,0,main.screenwidth//2-offsetX,main.screenheight-offsetY))
+def drawstartroad(screen,offsetX,offsetY): 
+    pygame.draw.rect(screen, (86,86,86),((main.screenwidth//2)//2-offsetX,0-offsetY,main.screenwidth//2,main.screenheight))
 
 #class Road():
 #    def __init__(self,length):
