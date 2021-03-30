@@ -18,11 +18,11 @@ velocity = 0
 def updatePlayerDown(key):
     if key == pygame.K_a:
         player.playerangle = -0.5
-    elif key == pygame.K_d:
+    if key == pygame.K_d:
         player.playerangle = 0.5
-    elif key == pygame.K_w:
+    if key == pygame.K_w:
         player.pushed_forward = True
-    elif key == pygame.K_s:
+    if key == pygame.K_s:
         player.pushed_backward = True
 
 def updatePlayerUp(key):
