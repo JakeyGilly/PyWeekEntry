@@ -10,8 +10,8 @@ screenwidth = 1920
 def main():
     pygame.init()
     # Set player starting X, Y
-    player.x = (screenwidth / 2) - 25
-    player.y = (screenheight / 2) - 25
+    player.x = 0
+    player.y = 0
 
     #  Setting up the screen
     size = screenwidth, screenheight
@@ -31,7 +31,7 @@ def main():
         # Clear the screen
         screen.fill((255, 255, 255))
         # Draw the things on the screen
-        roads.drawstartroad(screen)
-        player.rectRotate(screen, (255, 0, 0), (player.x, player.y, 50, 70), player.angle)
+        roads.drawstartroad(screen, player.x,player.y)
+        player.rectRotate(screen, (255, 0, 0), ((screenwidth / 2) - 25,(screenheight / 2) - 25 , 50, 70), player.angle)
         # Update the screen
         pygame.display.update()
