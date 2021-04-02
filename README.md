@@ -6,5 +6,5 @@ We thought of many ideas and wouldnt decide what to pick so we used a randomizer
 ## Authors
 
 - Jake Gillman - _Team Leader_ - [JakeyGilly](https://github.com/JakeyGilly/)
-- Finn O Neil - [Explorer017](https://github.com/Explorer017/)
+- Finn O'Neill - [Explorer017](https://github.com/Explorer017/)
  
