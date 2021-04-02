@@ -14,24 +14,22 @@ drag = 0.005
 pushed_forward = False
 pushed_backward = False
 velocity = 0
-
+player.pushed_forward = True
 def updatePlayerDown(key):
     if key == pygame.K_a:
         player.playerangle = -0.5
     if key == pygame.K_d:
         player.playerangle = 0.5
-    if key == pygame.K_w:
-        player.pushed_forward = True
     if key == pygame.K_s:
         player.pushed_backward = True
+        player.pushed_forward = False
 
 def updatePlayerUp(key):
     if key == pygame.K_a or key == pygame.K_d:
         player.playerangle = 0
-    if key == pygame.K_w:
-        player.pushed_forward = False
     if key == pygame.K_s:
         player.pushed_backward = False
+        player.pushed_forward = True
 
 def rectRotate(surface, color, pos, rotation_angle):
     s = pygame.Surface((pos[2]*2,pos[3]*2))
